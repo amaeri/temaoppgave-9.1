@@ -1,0 +1,108 @@
+body
+	font-size: $font-size
+	background: $color-light
+	color: $color-dark	
+
+#horisontal-container
+	position: relative
+	height: 100vh
+
+#horisontal-scroll
+	position: sticky
+	display: flex
+	flex-flow: row nowrap
+	width: 2600vw
+	height: 100vh
+	// transform: translateX(0%)
+	
+
+header, .intropage
+	background: $color-dark
+	color: $color-light
+	width: $width
+	height: $height
+
+header
+	padding: 2vw
+
+.slide
+	width: 100vw
+	height: 100vh
+	position: sticky
+	left: 0
+	background: $color-light
+	box-shadow: -10em -1em 10em $color-light
+
+nav 
+	display: none
+
+h1, h2, h3
+	font-family: $title		
+
+h1 
+	position: relative
+	width: 100%
+	background: $color-dark
+
+	$move: 3s
+
+	&[data-move-right]
+		animation: moveLeftRight $move ease forwards
+	
+	&[data-move-left]
+		animation: moveRightLeft $move ease forwards
+
+	&:nth-child(1)
+		font-size: $h1-size
+
+	&:nth-child(2)
+		font-size: $h1-size * 0.7
+
+	&:nth-child(3)
+		font-size: $h1-size * 1.4
+	
+	&:nth-child(4)
+		font-size: $h1-size * 0.9
+
+	&:nth-child(5)
+		font-size: $h1-size * 0.4
+		text-align: right
+
+header
+	display: flex
+	flex-flow: column nowrap
+	justify-content: space-between
+	
+
+@keyframes moveRightLeft
+	from
+		left: 100%
+
+	to
+		left: 0%
+
+@keyframes moveLeftRight
+	from
+		left: -100%
+
+	to
+		left: 0%
+
+h2, p
+	padding-top: $padding * 1.5
+	padding-left: $padding / 2
+
+h2
+	font-size: $h2-size
+
+h3
+	font-size: $h3-size
+	color: $h3-color
+	padding-top: $padding / 3
+	padding-left: $padding / 2
+
+#h3-catalog
+	padding-left: $padding * 1.2
+
+p
+	font-family: $font
