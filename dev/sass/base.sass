@@ -1,7 +1,18 @@
 body
 	font-size: $font-size
 	background: $color-light
-	color: $color-dark	
+	color: $color-dark
+
+nav
+	display: none
+	height: 100vh
+	background: $color-dark
+	font-size: $font-size / 1.5
+	font-family: $title
+
+	a
+		color: $color-light
+		text-decoration: none
 
 #horisontal-container
 	position: relative
@@ -13,28 +24,30 @@ body
 	flex-flow: row nowrap
 	width: 2600vw
 	height: 100vh
-	// transform: translateX(0%)
-	
-
+		
 header, .intropage
 	background: $color-dark
 	color: $color-light
 	width: $width
 	height: $height
+	position: sticky
+
+.intropage
+	z-index: 1
 
 header
+	display: flex
+	flex-flow: column nowrap
+	justify-content: space-between
 	padding: 2vw
 
 .slide
 	width: 100vw
 	height: 100vh
+	background: $color-light
 	position: sticky
 	left: 0
-	background: $color-light
 	box-shadow: -10em -1em 10em $color-light
-
-nav 
-	display: none
 
 h1, h2, h3
 	font-family: $title		
@@ -42,41 +55,31 @@ h1, h2, h3
 h1 
 	position: relative
 	width: 100%
-	background: $color-dark
-
-	$move: 3s
-
-	&[data-move-right]
-		animation: moveLeftRight $move ease forwards
-	
-	&[data-move-left]
-		animation: moveRightLeft $move ease forwards
 
 	&:nth-child(1)
 		font-size: $h1-size
+		animation: moveRightLeft 2s ease-in-out backwards 3.8s
 
 	&:nth-child(2)
 		font-size: $h1-size * 0.7
+		animation: moveLeftRight 2s ease-in-out backwards 4.5s
 
 	&:nth-child(3)
 		font-size: $h1-size * 1.4
+		animation: moveRightLeft 2s ease-in-out backwards .5s
 	
 	&:nth-child(4)
 		font-size: $h1-size * 0.9
+		animation: moveLeftRight 2s ease-in-out backwards 2s
 
 	&:nth-child(5)
 		font-size: $h1-size * 0.4
 		text-align: right
-
-header
-	display: flex
-	flex-flow: column nowrap
-	justify-content: space-between
-	
+		animation: moveRightLeft 3s ease-in-out backwards 4.8s	
 
 @keyframes moveRightLeft
 	from
-		left: 100%
+		left: 105%
 
 	to
 		left: 0%
@@ -87,6 +90,13 @@ header
 
 	to
 		left: 0%
+
+
+@keyframes fadeInText
+	0%
+		opacity: 0
+	100%
+		opacity: 1
 
 h2, p
 	padding-top: $padding * 1.5
@@ -103,6 +113,3 @@ h3
 
 #h3-catalog
 	padding-left: $padding * 1.2
-
-p
-	font-family: $font

@@ -23,6 +23,16 @@ body {
   background: #EBEBEB;
   color: #3E3E3E; }
 
+nav {
+  display: none;
+  height: 100vh;
+  background: #3E3E3E;
+  font-size: 1.33333vw;
+  font-family: "Theinhardt"; }
+  nav a {
+    color: #EBEBEB;
+    text-decoration: none; }
+
 #horisontal-container {
   position: relative;
   height: 100vh; }
@@ -38,53 +48,52 @@ header, .intropage {
   background: #3E3E3E;
   color: #EBEBEB;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  position: sticky; }
+
+.intropage {
+  z-index: 1; }
 
 header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   padding: 2vw; }
 
 .slide {
   width: 100vw;
   height: 100vh;
+  background: #EBEBEB;
   position: sticky;
   left: 0;
-  background: #EBEBEB;
   box-shadow: -10em -1em 10em #EBEBEB; }
-
-nav {
-  display: none; }
 
 h1, h2, h3 {
   font-family: "Theinhardt"; }
 
 h1 {
   position: relative;
-  width: 100%;
-  background: #3E3E3E; }
-  h1[data-move-right] {
-    animation: moveLeftRight 3s ease forwards; }
-  h1[data-move-left] {
-    animation: moveRightLeft 3s ease forwards; }
+  width: 100%; }
   h1:nth-child(1) {
-    font-size: 10vw; }
+    font-size: 10vw;
+    animation: moveRightLeft 2s ease-in-out backwards 3.8s; }
   h1:nth-child(2) {
-    font-size: 7vw; }
+    font-size: 7vw;
+    animation: moveLeftRight 2s ease-in-out backwards 4.5s; }
   h1:nth-child(3) {
-    font-size: 14vw; }
+    font-size: 14vw;
+    animation: moveRightLeft 2s ease-in-out backwards .5s; }
   h1:nth-child(4) {
-    font-size: 9vw; }
+    font-size: 9vw;
+    animation: moveLeftRight 2s ease-in-out backwards 2s; }
   h1:nth-child(5) {
     font-size: 4vw;
-    text-align: right; }
-
-header {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between; }
+    text-align: right;
+    animation: moveRightLeft 3s ease-in-out backwards 4.8s; }
 
 @keyframes moveRightLeft {
   from {
-    left: 100%; }
+    left: 105%; }
   to {
     left: 0%; } }
 
@@ -93,6 +102,12 @@ header {
     left: -100%; }
   to {
     left: 0%; } }
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 h2, p {
   padding-top: 15%;
@@ -109,6 +124,3 @@ h3 {
 
 #h3-catalog {
   padding-left: 12%; }
-
-p {
-  font-family: "Tiempos Text"; }
